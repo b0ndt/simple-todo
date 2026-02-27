@@ -1,0 +1,9 @@
+{
+  "cleanUrls": true,
+  "rewrites": [
+    {
+      "source": "/((?!public/|design-system/|screens/).*)",
+      "destination": "/screens/index.html"
+    }
+  ]
+}

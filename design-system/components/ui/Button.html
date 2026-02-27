@@ -48,7 +48,6 @@
 
   /* Active */
   .btn:active:not(:disabled) {
-    background-color: #6d28d9;
     transform: scale(0.97);
   }
 
@@ -81,11 +80,11 @@
   }
 
   .btn--ghost:hover:not(:disabled) {
-    background-color: rgba(124, 58, 237, 0.15);
+    background-color: var(--color-glow);
   }
 
   .btn--ghost:active:not(:disabled) {
-    background-color: rgba(124, 58, 237, 0.25);
+    background-color: var(--color-glow);
     transform: scale(0.97);
   }
 </style>

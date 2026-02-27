@@ -1,0 +1,37 @@
+.card-glow-wrap {
+  position: relative;
+}
+
+.card-glow-wrap::before {
+  content: "";
+  position: absolute;
+  inset: calc(var(--space-5) * -1);
+  border-radius: var(--radius-lg);
+  background: radial-gradient(circle, var(--color-glow) 0%, transparent 70%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.card {
+  position: relative;
+  z-index: 1;
+  width: var(--card-width);
+  padding: var(--space-4) var(--space-3);
+  background-color: var(--color-card-surface);
+  backdrop-filter: var(--backdrop-blur-card);
+  -webkit-backdrop-filter: var(--backdrop-blur-card);
+  border: 1px solid var(--color-card-border);
+  border-radius: var(--radius-lg);
+  animation: border-cycle 2.5s var(--easing-smooth) infinite;
+  transition-property: box-shadow, border-color;
+  transition-duration: var(--duration-base);
+  transition-timing-function: var(--easing-smooth);
+}
+
+.card:hover {
+  box-shadow: 0 0 calc(var(--space-8) + var(--space-2)) var(--space-2) var(--color-glow);
+}
+
+.card:focus-within {
+  box-shadow: 0 0 0 2px var(--color-background), 0 0 0 4px var(--color-primary-light);
+}

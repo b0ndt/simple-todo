@@ -47,7 +47,7 @@
 
   /* Hover — slightly brighter glow */
   .card:hover {
-    box-shadow: 0 0 40px 8px rgba(124, 58, 237, 0.15);
+    box-shadow: 0 0 calc(var(--space-8) + var(--space-2)) var(--space-2) var(--color-glow);
   }
 
   /* Focus-within — ring when an interactive child is focused */
@@ -81,8 +81,8 @@
         />
       </div>
       <div class="card__body">
-        <div style="display: flex; align-items: center; gap: 8px;">
-          <button class="btn btn--ghost" style="width:20px;height:20px;min-height:20px;padding:0;border-radius:9999px;"></button>
+        <div style="display: flex; align-items: center; gap: var(--space-2);">
+          <button class="btn btn--ghost" style="width:20px;height:20px;min-height:20px;padding:0;border-radius:var(--radius-full);"></button>
           <span class="font-display" style="font-size: var(--text-lg); flex: 1;">Buy fresh sourdough</span>
           <button class="btn btn--circle" aria-label="Delete todo">×</button>
         </div>

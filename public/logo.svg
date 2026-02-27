@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 40" role="img" aria-labelledby="title desc">
+  <title id="title">simple todo logo</title>
+  <desc id="desc">A circular orchid icon followed by simple todo wordmark.</desc>
+  <rect width="192" height="40" fill="none" />
+  <circle cx="20" cy="20" r="12" fill="#7c3aed" />
+  <path d="M14 20l4 4 8-8" fill="none" stroke="#e4e0ec" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+  <text x="44" y="25" fill="#e4e0ec" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="400">simple todo</text>
+</svg>
