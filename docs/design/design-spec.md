@@ -146,7 +146,26 @@ Derived from card dimensions (240px card, 24px radius) — base unit 4px.
 ## Handoff
 
 ### Artifacts
-- `docs/design/design-spec.md` — this file
+
+| # | File | Description |
+|---|---|---|
+| 1 | `docs/design/approved-direction.md` | Approved direction selection + source prompt |
+| 2 | `docs/design/design-spec.md` | This file — full spec extracted from direction prompt |
+| 3 | `design-system/tailwind.config.ts` | Tailwind v3 custom theme using only spec tokens |
+| 4 | `design-system/globals.css` | CSS custom properties, Google Fonts import, base reset, utility classes |
+| 5 | `design-system/components/ui/Button.html` | Button component (primary, circle/delete, ghost) — all states |
+| 6 | `design-system/components/ui/Card.html` | Card component (frosted glass, animated border, glow) — all states |
+| 7 | `screens/index.html` | Primary screen — fully functional pixel-intent mockup match |
+
+### Environment Variables / API Keys
+- **No API keys or env vars are required.** The app is entirely client-side with `localStorage` persistence.
+- The Tailwind config is provided as a reference artifact. The primary screen (`screens/index.html`) uses plain CSS custom properties and requires no build step.
 
 ### Blockers
-- None for this artifact. All values extracted from the approved design prompt.
+- **BLOCKER — Mockup image not available.** `docs/design/approved-direction.md` was expected to contain a mockup URL, but neither the file nor any mockup PNGs existed. All design tokens were extracted from the detailed prompt text in `docs/design/design-exploration.md` (Direction 1 "Midnight Orchid"), which contains exact hex values, typography specs, spacing, and component descriptions. The prompt serves as the authoritative source of truth.
+- **BLOCKER — Image generation API key missing.** Mockup PNG generation requires an image-generation API key (e.g. `OPENAI_API_KEY` for DALL-E). No such key is configured. The design prompt is ready for manual generation.
+
+### Notes
+- Every color, font, spacing, and radius value in all artifacts traces directly back to the Direction 1 prompt. No values were invented.
+- The primary screen implements all five MUST requirements (create, complete, delete, prevent second, persist).
+- Components use `.html` format (vanilla CSS + markup) to match the project's zero-dependency architecture.
