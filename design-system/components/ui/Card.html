@@ -1,0 +1,92 @@
+<!--
+  Card Component — Midnight Orchid Design System
+  States: default, hover, focus-within
+
+  Usage:
+    <div class="card-glow-wrap">
+      <div class="card">…content…</div>
+    </div>
+-->
+
+<style>
+  /* --- Glow Wrapper (provides the radial purple glow behind the card) --- */
+  .card-glow-wrap {
+    position: relative;
+  }
+
+  .card-glow-wrap::before {
+    content: "";
+    position: absolute;
+    inset: -20px;
+    border-radius: var(--radius-lg);
+    background: radial-gradient(circle, var(--color-glow) 0%, transparent 70%);
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  /* --- Card Surface --- */
+  .card {
+    position: relative;
+    z-index: 1;
+    width: var(--card-width);
+    padding: var(--space-4) var(--space-3);
+
+    background-color: var(--color-card-surface);
+    backdrop-filter: var(--backdrop-blur-card);
+    -webkit-backdrop-filter: var(--backdrop-blur-card);
+    border: 1px solid var(--color-card-border);
+    border-radius: var(--radius-lg);
+
+    /* Animated gradient border via animation */
+    animation: border-cycle 2.5s var(--easing-smooth) infinite;
+
+    transition-property: box-shadow, border-color;
+    transition-duration: var(--duration-base);
+    transition-timing-function: var(--easing-smooth);
+  }
+
+  /* Hover — slightly brighter glow */
+  .card:hover {
+    box-shadow: 0 0 40px 8px rgba(124, 58, 237, 0.15);
+  }
+
+  /* Focus-within — ring when an interactive child is focused */
+  .card:focus-within {
+    box-shadow: 0 0 0 2px var(--color-background), 0 0 0 4px var(--color-primary-light);
+  }
+
+  /* --- Card Sections --- */
+  .card__header {
+    padding-bottom: var(--space-3);
+    border-bottom: 1px solid var(--color-card-border);
+    margin-bottom: var(--space-3);
+  }
+
+  .card__body {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+</style>
+
+<!-- Demo / Reference Markup -->
+<div class="center-page" style="background: var(--color-background); min-height: 100vh;">
+  <div class="card-glow-wrap">
+    <div class="card">
+      <div class="card__header">
+        <input
+          type="text"
+          class="todo-input"
+          placeholder="What is the one thing?"
+        />
+      </div>
+      <div class="card__body">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <button class="btn btn--ghost" style="width:20px;height:20px;min-height:20px;padding:0;border-radius:9999px;"></button>
+          <span class="font-display" style="font-size: var(--text-lg); flex: 1;">Buy fresh sourdough</span>
+          <button class="btn btn--circle" aria-label="Delete todo">×</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

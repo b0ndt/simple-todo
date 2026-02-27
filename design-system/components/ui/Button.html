@@ -1,0 +1,106 @@
+<!--
+  Button Component — Midnight Orchid Design System
+  States: default, hover, focus, active, disabled
+
+  Usage:
+    <button class="btn">Label</button>
+    <button class="btn btn--circle">×</button>
+    <button class="btn" disabled>Label</button>
+-->
+
+<style>
+  /* --- Primary Button --- */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    padding: var(--space-2) var(--space-4);
+    min-height: 36px;
+
+    font-family: var(--font-ui);
+    font-weight: var(--font-weight-ui);
+    font-size: var(--text-sm);
+    line-height: 1.5;
+    color: var(--color-text);
+    white-space: nowrap;
+
+    background-color: var(--color-primary);
+    border: none;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+
+    transition-property: background-color, color, box-shadow, transform, opacity;
+    transition-duration: var(--duration-fast);
+    transition-timing-function: var(--easing-smooth);
+  }
+
+  /* Hover */
+  .btn:hover:not(:disabled) {
+    background-color: var(--color-primary-light);
+  }
+
+  /* Focus */
+  .btn:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--color-background), 0 0 0 4px var(--color-primary-light);
+  }
+
+  /* Active */
+  .btn:active:not(:disabled) {
+    background-color: #6d28d9;
+    transform: scale(0.97);
+  }
+
+  /* Disabled */
+  .btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+
+  /* --- Circular Delete Button Variant --- */
+  .btn--circle {
+    width: 28px;
+    height: 28px;
+    min-height: 28px;
+    padding: 0;
+    border-radius: var(--radius-full);
+    font-size: var(--text-base);
+  }
+
+  .btn--circle:hover:not(:disabled) {
+    animation: pulse-gentle 1.5s var(--easing-smooth) infinite;
+    background-color: var(--color-primary-light);
+  }
+
+  /* --- Ghost / Subtle Variant (for checkbox-like actions) --- */
+  .btn--ghost {
+    background-color: transparent;
+    border: 2px solid var(--color-primary);
+    color: var(--color-text);
+  }
+
+  .btn--ghost:hover:not(:disabled) {
+    background-color: rgba(124, 58, 237, 0.15);
+  }
+
+  .btn--ghost:active:not(:disabled) {
+    background-color: rgba(124, 58, 237, 0.25);
+    transform: scale(0.97);
+  }
+</style>
+
+<!-- Demo / Reference Markup -->
+<div style="display: flex; flex-direction: column; gap: 16px; padding: 32px; background: var(--color-background);">
+  <!-- Default -->
+  <button class="btn">Add Todo</button>
+
+  <!-- Disabled -->
+  <button class="btn" disabled>Add Todo</button>
+
+  <!-- Circular Delete -->
+  <button class="btn btn--circle" aria-label="Delete todo">×</button>
+
+  <!-- Ghost -->
+  <button class="btn btn--ghost">Mark Complete</button>
+</div>
