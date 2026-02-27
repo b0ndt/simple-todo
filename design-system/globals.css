@@ -1,0 +1,149 @@
+/* ============================================================
+   simple-todo — Global Styles (Midnight Orchid)
+   Source: docs/design/design-spec.md
+   ============================================================ */
+
+/* --- Fonts --- */
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Inter:wght@400&display=swap");
+
+/* --- CSS Custom Properties --- */
+:root {
+  /* Palette */
+  --color-background: #09090f;
+  --color-card-surface: #1a1a24;
+  --color-card-border: rgba(255, 255, 255, 0.12);
+  --color-primary: #7c3aed;
+  --color-primary-light: #a78bfa;
+  --color-text: #e4e0ec;
+  --color-text-muted: rgba(228, 224, 236, 0.5);
+  --color-glow: rgba(124, 58, 237, 0.25);
+
+  /* Typography */
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-ui: "Inter", system-ui, sans-serif;
+  --font-weight-display: 500;
+  --font-weight-ui: 400;
+
+  /* Type scale */
+  --text-xs: 11px;
+  --text-sm: 13px;
+  --text-base: 15px;
+  --text-lg: 18px;
+
+  /* Spacing (base 4px) */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+
+  /* Radii */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 24px;
+  --radius-full: 9999px;
+
+  /* Shadows & Effects */
+  --shadow-glow: 0 0 80px 20px rgba(124, 58, 237, 0.25);
+  --backdrop-blur-card: blur(16px);
+  --border-gradient: linear-gradient(135deg, #7c3aed, #a78bfa);
+
+  /* Animation */
+  --duration-fast: 150ms;
+  --duration-base: 250ms;
+  --easing-smooth: ease-in-out;
+
+  /* Layout */
+  --card-width: 240px;
+}
+
+/* --- Base Reset --- */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-family: var(--font-ui);
+  font-weight: var(--font-weight-ui);
+  font-size: var(--text-base);
+  line-height: 1.6;
+  color: var(--color-text);
+  background-color: var(--color-background);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* --- Utility Classes --- */
+
+.font-display {
+  font-family: var(--font-display);
+  font-weight: var(--font-weight-display);
+}
+
+.font-ui {
+  font-family: var(--font-ui);
+  font-weight: var(--font-weight-ui);
+}
+
+.text-muted {
+  color: var(--color-text-muted);
+}
+
+.center-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+/* --- Focus Ring Utility --- */
+.focus-ring:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--color-background), 0 0 0 4px var(--color-primary-light);
+}
+
+/* --- Animated Gradient Border (card) --- */
+@keyframes border-cycle {
+  0%, 100% { border-color: var(--color-primary); }
+  50% { border-color: var(--color-primary-light); }
+}
+
+@keyframes pulse-gentle {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+/* --- Transition Utility --- */
+.transition-fast {
+  transition-property: background-color, color, border-color, box-shadow, transform, opacity;
+  transition-duration: var(--duration-fast);
+  transition-timing-function: var(--easing-smooth);
+}
+
+.transition-base {
+  transition-property: background-color, color, border-color, box-shadow, transform, opacity;
+  transition-duration: var(--duration-base);
+  transition-timing-function: var(--easing-smooth);
+}
+
+/* --- Disabled State Utility --- */
+.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* --- Strikethrough (completed todo) --- */
+.completed-text {
+  text-decoration: line-through;
+  opacity: 0.55;
+}
