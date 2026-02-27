@@ -32,7 +32,6 @@ const elements = {
   deleteBtn: document.getElementById("delete-btn"),
   emptyHint: document.getElementById("empty-hint"),
   statusNote: document.getElementById("status-note"),
-  routeChip: document.getElementById("route-chip"),
 };
 
 function normalizePath(pathname) {
@@ -217,7 +216,6 @@ function render() {
     elements.statusNote.className = "status-note";
   }
 
-  elements.routeChip.textContent = state.route;
   updateAddButtonState();
 }
 
