@@ -80,6 +80,10 @@ From `docs/architecture/00-system-overview.md`: **no API keys or env vars are re
 - No required key is missing.
 - Mock/fallback implemented for seed data fetch (`public/data/todo.json` -> empty state on failure).
 
+## Handoff
+
+- BLOCKER: None for runtime implementation scope.
+
 ## Local Run
 
 No build step required.
