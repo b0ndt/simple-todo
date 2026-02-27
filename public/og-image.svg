@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">simple todo open graph image</title>
+  <desc id="desc">Midnight Orchid themed social preview for simple todo.</desc>
+  <defs>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#7c3aed" stop-opacity="0.28" />
+      <stop offset="100%" stop-color="#7c3aed" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="#09090f" />
+  <circle cx="600" cy="315" r="260" fill="url(#glow)" />
+  <rect x="460" y="175" width="280" height="280" rx="24" fill="#1a1a24" stroke="rgba(255,255,255,0.12)" />
+  <rect x="492" y="235" width="216" height="2" fill="rgba(255,255,255,0.12)" />
+  <circle cx="508" cy="312" r="12" fill="none" stroke="#7c3aed" stroke-width="3" />
+  <text x="532" y="320" fill="#e4e0ec" font-family="'Playfair Display', Georgia, serif" font-size="32" font-weight="500">Buy fresh sourdough</text>
+  <circle cx="684" cy="312" r="16" fill="#7c3aed" />
+  <text x="676" y="320" fill="#e4e0ec" font-family="Inter, Arial, sans-serif" font-size="20">×</text>
+  <text x="60" y="96" fill="#e4e0ec" font-family="Inter, Arial, sans-serif" font-size="48">simple todo</text>
+</svg>
